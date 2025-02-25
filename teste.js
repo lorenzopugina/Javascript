@@ -66,3 +66,54 @@ const leonado = new pessoas('Leonardo', 20);
 
 compararIdades(jonatas, leonado);
 
+
+
+// criando herança de classes
+class Animal{
+    constructor(name){
+        this.name = name;
+    }
+}
+
+class Dog extends Animal { // se uma classe não possui construtor, ela herda o da superclasse
+    latir(){
+        console.log("Au aU aUuuuu");
+    }
+} 
+
+const cachorro = new Dog("viraLata");
+console.log(cachorro);
+cachorro.latir();
+
+console.log("----------------------------------");
+
+
+// sobrescrita de metodo (polimorfismo), quando a subclasse altera o metodo herdade somente pra ela
+
+class automovel {
+
+    buzinar(){
+        console.log("BIBI");
+    }
+}
+
+class moto extends automovel {
+    buzinar(){
+        console.log("BIIIIIIIBIIIIIIII");
+    }
+}
+
+const titan = new moto();
+titan.buzinar();
+
+
+// ----------- Arrays
+
+const alunos = ["jonas", "joao", "jessica"];
+alunos.push("jonathan");  // .push adiciona itens no final do array
+console.log(alunos);
+
+//.lenght retorna quantos elementos tem o array
+// .pop retira o ultimo item do array, que pode ser atribuido a uma variavel
+const jonnatan = alunos.pop();
+console.log(jonnatan);
