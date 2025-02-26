@@ -146,3 +146,6 @@ console.log(alunos);
 const jonnatan = alunos.pop();
 console.log(jonnatan);
 
+
+
+// 1rem = tamanho com relação a fonte
