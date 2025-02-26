@@ -106,6 +106,34 @@ class moto extends automovel {
 const titan = new moto();
 titan.buzinar();
 
+console.log("----------------------------------");
+
+// super copia o metodo da superclasse
+class humano{
+    constructor(arma){
+        this.arma = arma;
+        this.vida = 100;
+    }
+
+    gritar(palavra){
+        console.log(`eu grito ${palavra}`);
+    }
+}
+
+class guerreiro extends humano{
+    constructor(arma){
+        super(arma);
+        // aqui viriam outras propriedades da classe
+    }
+
+}
+const heroi = new  guerreiro("lança");
+console.log(heroi);
+heroi.gritar("BATATA");
+
+console.log("----------------------------------");
+
+
 
 // ----------- Arrays
 
@@ -117,3 +145,4 @@ console.log(alunos);
 // .pop retira o ultimo item do array, que pode ser atribuido a uma variavel
 const jonnatan = alunos.pop();
 console.log(jonnatan);
+
