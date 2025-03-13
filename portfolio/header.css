@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+.main{
+    padding: 1rem;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .title{
+    text-align: center;
+}
+
+.photo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
