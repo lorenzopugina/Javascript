@@ -146,6 +146,93 @@ console.log(alunos);
 const jonnatan = alunos.pop();
 console.log(jonnatan);
 
-
-
 // 1rem = tamanho com relação a fonte
+
+
+const pessoaTeste = {
+    idade: 18
+}
+
+const renam = {
+    nome: 'renam',
+    __proto__: pessoaTeste
+}
+
+console.log(renam.idade);
+
+//--------------------------------- Funções
+
+// podem ser passadas como parametros, retornadas em funções e ate atribuidas a objetos
+
+function dizTchau(){
+    console.log("tchau")
+}
+
+const tchau = dizTchau
+tchau();
+
+
+function dizTchauBonito(tchau){''
+    tchau()
+    console.log("vai na sombra")
+}
+
+dizTchauBonito(tchau)
+
+const funcao = function(){
+    console.log("assim pode haver problemas com o hoisting, mas funciona")
+}
+
+// arow function e declaração explicita
+
+const minhaFuncao = (param1, param2) => {
+    return param1 + param2;
+};
+
+// se tiver apenas uma exressão, não precisa do return e das chaves
+const soma = (a, b) => a + b;
+
+// se tiver apenas um parametro, o parenteses tbm pode sumir, mas se nao tiver precisa
+const dobrar = x => x * 2;
+const sayHi = () => "Olá, mundo!";
+
+
+
+//---------------------------------promessas
+
+// ressolve é chamada quando a operação der certo, reject quando der errado
+
+const minhaPromise = new Promise((resolve, reject) => {
+    let sucesso = true; 
+
+    setTimeout(() => {
+        if (sucesso) {
+            resolve("Deu certo!");
+        } else {
+            reject("Algo deu errado!");
+        }
+    }, 2000);
+});
+
+
+const numeroAleatorio = new Promise((resolve, reject) => {
+    
+    const numero = parseInt(Math.random() * 100)
+
+    resolve(numero)
+    // reject é opcional, ja que aqui sempre vai resolver retornando um numero
+});
+
+// é executado depois da operação da promise
+numeroAleatorio
+    .then((value) => {
+        console.log(value)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+    .finally(() => {
+        console.log("acabiou")
+    })
+
+// se reject for chamado. o catch é acionado. se Resolve for chamado, then é acionado
